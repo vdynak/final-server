@@ -20,8 +20,16 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
+  }, 
+  imageURL: {
+    type: Sequelize.STRING, 
+    defaultValue: "https://www.ccny.cuny.edu/sites/default/files/styles/large/public/2019-08/fastfacts_fullcampus_.jpg?itok=1FltVbLw", 
+    validate: {
+      isURL: true
+    }
   }
 });
+
 
 // Export the campus model
 module.exports = Campus;
